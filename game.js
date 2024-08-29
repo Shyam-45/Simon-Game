@@ -6,8 +6,6 @@ var start = false;
 var level = 0;
 var buttonCount = 0;
 
-var maxScore = 0;
-
 //Check for any key press on keyboard
 $(document).keypress( function() {
     
@@ -23,7 +21,7 @@ $(".btn").click( function(ele) {
 
     buttonCount++;
     var userChosenColor = ele.target.id;
-    //var userChosenColor = $(this).attr("id");
+
     userClickedPattern.push(userChosenColor);
 
     playSound(userChosenColor);
@@ -47,9 +45,6 @@ $(".btn").click( function(ele) {
             
     }
     else {
-
-        maxScore = Math.max(maxScore, buttonCount);
-        $("h3").text(maxScore);
 
         buttonCount = 0;
         //play Wrong Sound
@@ -103,39 +98,6 @@ function nextSequence() {
     playSound(randomChosenColor);
 
 }
-
-/*function playAudio(color) {
-
-    // switch(color) {
-        
-    //     case "red" : 
-    //         var red = new Audio("./sounds/red.mp3");
-    //         red.play();
-    //     break;
-
-    //     case "blue" : 
-    //         var blue = new Audio("./sounds/blue.mp3");
-    //         blue.play();
-    //     break;
-
-    //     case "green" : 
-    //         var green = new Audio("./sounds/green.mp3");
-    //         green.play();
-    //     break;
-
-    //     case "yellow" : 
-    //         var yellow = new Audio("./sounds/yellow.mp3");
-    //         yellow.play();
-    //     break;
-
-    //     default :
-    //         alert("Error");
-    //         var error = new Audio("./sounds/wrong.mp3");
-    //         error.play();
-    // }
-
-}*/
-
 
 //Play Audio for req. button
 function playSound(name) {
