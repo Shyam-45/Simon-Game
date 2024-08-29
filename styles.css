@@ -52,14 +52,6 @@ body {
   background-color: grey;
 }
 
-.scoreCard {
-  display: inline-block;
-  background-color:lightsalmon;
-  color:purple;
-  text-align: center;
-  font-size: 1rem;
-}
-
 h3 {
   color:darkslateblue
 }
